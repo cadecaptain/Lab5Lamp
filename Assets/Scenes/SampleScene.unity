@@ -1052,6 +1052,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1610568305830527268, guid: 47324397a924d4bf3b7710080f669632, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610568305830527268, guid: 47324397a924d4bf3b7710080f669632, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f7f3711e2d921497aa817963c940117e, type: 2}
     - target: {fileID: 2717546325896271471, guid: 47324397a924d4bf3b7710080f669632, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1099,6 +1107,18 @@ PrefabInstance:
     - target: {fileID: 3385995882259762389, guid: 47324397a924d4bf3b7710080f669632, type: 3}
       propertyPath: m_Name
       value: Light Bulb
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604535040571196548, guid: 47324397a924d4bf3b7710080f669632, type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604535040571196550, guid: 47324397a924d4bf3b7710080f669632, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4604535040571196550, guid: 47324397a924d4bf3b7710080f669632, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47324397a924d4bf3b7710080f669632, type: 3}
