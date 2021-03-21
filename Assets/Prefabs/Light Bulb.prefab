@@ -336,6 +336,7 @@ GameObject:
   - component: {fileID: 2717546325896271471}
   - component: {fileID: 3385995882259762386}
   - component: {fileID: 2038149370080457587}
+  - component: {fileID: 1332370223251876734}
   m_Layer: 0
   m_Name: Light Bulb
   m_TagString: Untagged
@@ -388,6 +389,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotation: 50
+--- !u!64 &1332370223251876734
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3385995882259762389}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: a9cbd62daef1e4a8682d9fc71ad223b8, type: 3}
 --- !u!1 &4604535040571196550
 GameObject:
   m_ObjectHideFlags: 0
