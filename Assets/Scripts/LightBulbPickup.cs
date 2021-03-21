@@ -29,7 +29,8 @@ public class LightBulbPickup : MonoBehaviour
 
     private void AddLightBulbToInventory()
     {
-
+        Debug.Log("Lightbulb picked up!");
+        GameManager.Instance.AddLightBulb(lightColor);
     }
 
 }
