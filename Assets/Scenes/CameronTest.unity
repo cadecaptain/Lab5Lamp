@@ -341,11 +341,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a4b19ef2b98d48d48b680b45148953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FadeDuration: 0.5
   events: {fileID: 0}
   instructionsButton: {fileID: 0}
   startButton: {fileID: 0}
   sourcesButton: {fileID: 0}
   canvas: {fileID: 0}
+  fade: {fileID: 0}
   title: {fileID: 0}
   backgroundImage: {fileID: 0}
   sourcesText: {fileID: 0}
@@ -443,6 +445,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Light Bulb
       objectReference: {fileID: 0}
+    - target: {fileID: 3385995882259762389, guid: 47324397a924d4bf3b7710080f669632, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47324397a924d4bf3b7710080f669632, type: 3}
 --- !u!1001 &1587025662448138735
@@ -452,6 +458,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1157261889840470524, guid: df8d6924d26d31040be85ccfda2e4b65, type: 3}
+      propertyPath: m_Intensity
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157261889840470524, guid: df8d6924d26d31040be85ccfda2e4b65, type: 3}
+      propertyPath: m_SpotAngle
+      value: 56.526318
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157261889840470524, guid: df8d6924d26d31040be85ccfda2e4b65, type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 56.526318
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157261889840470524, guid: df8d6924d26d31040be85ccfda2e4b65, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1157261889840470524, guid: df8d6924d26d31040be85ccfda2e4b65, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1587025661701429843, guid: df8d6924d26d31040be85ccfda2e4b65, type: 3}
       propertyPath: m_RootOrder
       value: 3
