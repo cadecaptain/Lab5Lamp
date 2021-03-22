@@ -2,15 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    public float FadeDuration = 0.5f;
     public GameObject events;
     public GameObject instructionsButton;
     public GameObject startButton;
     public GameObject sourcesButton;
     public GameObject canvas;
+    public GameObject fade;
+
 
     public GameObject title;
     public GameObject backgroundImage;
@@ -24,10 +30,15 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(canvas);
+            DontDestroyOnLoad(events);
+
+
         }
         else
         {
             Destroy(gameObject);
+
         }
     }
 
@@ -58,31 +69,60 @@ public class GameManager : MonoBehaviour
         
         instructionsButton.SetActive(false);
         sourcesButton.SetActive(true);
-        sourcesText.GetComponent<TextMeshProUGUI>().text = "";
-        instructionsText.GetComponent<TextMeshProUGUI>().text = "Find your bulb";
+        sourcesText.SetActive(false);
+        instructionsText.SetActive(true);
 
 
     }
     public void StartButton()
     {
+        HideStartUI();
+        StartCoroutine(ColorLerp(new Color(0, 0, 0, 0), FadeDuration, fade));
+        LoadScene("SampleScene");
+    }
 
-        //StartCoroutine(ColorLerp(new Color(1, 1, 1, 0), 2,backgroundImage));
+    IEnumerator ColorLerp(Color color, float duration, GameObject fadeImage)
+    {
+        fadeImage.SetActive(true);
+            float time = 0;
+            Color startValue = fadeImage.GetComponent<Image>().color;
+
+            while (time < duration)
+            {
+            fadeImage.GetComponent<Image>().color = Color.Lerp(startValue, color, time / duration);
+                time += Time.deltaTime;
+                yield return null;
+            }
+        fadeImage.GetComponent<Image>().color = color;
+        fadeImage.SetActive(false);
+
+    }
+
+    private void HideStartUI()
+    {
         startButton.SetActive(false);
         instructionsButton.SetActive(false);
         sourcesButton.SetActive(false);
         title.SetActive(false);
-        instructionsText.GetComponent<TextMeshProUGUI>().text = "";
-        sourcesText.GetComponent<TextMeshProUGUI>().text = "";
+        instructionsText.SetActive(false);
+        sourcesText.SetActive(false);
+        backgroundImage.SetActive(false);
 
-       
     }
+
     public void SourcesButton()
     {
-
         instructionsButton.SetActive(true);
         sourcesButton.SetActive(false);
-        instructionsText.GetComponent<TextMeshProUGUI>().text = "";
-        sourcesText.GetComponent<TextMeshProUGUI>().text = "There will be some here";
+        instructionsText.SetActive(false);
+        sourcesText.SetActive(true);
     }
 
+    private void LoadScene(String SceneName)
+    {
+        SceneManager.LoadSceneAsync(SceneName);
     }
+
+
+
+}
