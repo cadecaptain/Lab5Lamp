@@ -63,15 +63,9 @@ public class GameManager : MonoBehaviour
     }
 
     public void InstructionsButton()
-    {
-
-       
-        
-        instructionsButton.SetActive(false);
-        sourcesButton.SetActive(true);
+    {        
         sourcesText.SetActive(false);
         instructionsText.SetActive(true);
-
 
     }
     public void StartButton()
@@ -112,8 +106,6 @@ public class GameManager : MonoBehaviour
 
     public void SourcesButton()
     {
-        instructionsButton.SetActive(true);
-        sourcesButton.SetActive(false);
         instructionsText.SetActive(false);
         sourcesText.SetActive(true);
     }
