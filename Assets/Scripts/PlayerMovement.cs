@@ -12,6 +12,12 @@ public class PlayerMovement : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
 
+    public LightColor activeLight;
+    public GameObject regularLight;
+    public GameObject blackLight;
+    public GameObject infraredLight;
+    public GameObject greenLight;
+
     // Update is called once per frame
     void Update()
     {
@@ -29,5 +35,59 @@ public class PlayerMovement : MonoBehaviour
 
             controller.Move(direction * speed * Time.deltaTime);
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Debug.Log("User pressed key 1");
+            lightRegular();
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Debug.Log("User pressed key 2");
+            lightBlackLight();
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Debug.Log("User pressed key 3");
+            lightInfrared();
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            Debug.Log("User pressed key 4");
+            lightGreen();
+        }
+
+    }
+
+    void lightRegular()
+    {
+        blackLight.SetActive(false);
+        infraredLight.SetActive(false);
+        greenLight.SetActive(false);
+        regularLight.SetActive(true);
+    }
+
+    void lightBlackLight()
+    {
+        infraredLight.SetActive(false);
+        greenLight.SetActive(false);
+        regularLight.SetActive(false);
+        blackLight.SetActive(true);
+    }
+
+    void lightInfrared()
+    {
+        blackLight.SetActive(false);
+        infraredLight.SetActive(true);
+        greenLight.SetActive(false);
+        regularLight.SetActive(false);
+    }
+
+    void lightGreen()
+    {
+        blackLight.SetActive(false);
+        infraredLight.SetActive(false);
+        regularLight.SetActive(false);
+        greenLight.SetActive(true);
     }
 }

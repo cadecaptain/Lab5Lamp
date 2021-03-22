@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public GameObject sourcesText;
     public GameObject instructionsText;
     public List<LightColor> bulbInventory = new List<LightColor>();
+    public LightColor activeColor;
 
     private void Awake()
     {
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         AddLightBulb(LightColor.Regular);
+        ChangeLight(LightColor.Regular);
     }
 
     // Update is called once per frame
@@ -59,6 +61,19 @@ public class GameManager : MonoBehaviour
         if (!bulbInventory.Contains(color))
         {
             bulbInventory.Add(color);
+        }
+    }
+
+    public bool ChangeLight(LightColor color)
+    {
+        if (!bulbInventory.Contains(color))
+        {
+            activeColor = color;
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
