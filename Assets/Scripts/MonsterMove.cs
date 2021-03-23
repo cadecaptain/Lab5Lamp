@@ -12,22 +12,29 @@ public class MonsterMove : MonoBehaviour
     public GameObject pos;
     private float firstpos;
     private int flip;
-    private float start = 2;
-    private float end = 0;
+    
     private float addx;
-    
+    AudioSource audio;
 
-    
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
-        animator = GetComponent<Animator>();
+       
         firstpos = transform.position.x;
         flip = 0;
 
 
+    }
+    private void OnTriggerEnter (Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("hey");
+            audio.Play();
+        }
     }
     //https://www.youtube.com/watch?v=nG68yEB73SQ&t=437s
     // Update is called once per frame
@@ -37,7 +44,7 @@ public class MonsterMove : MonoBehaviour
         transform.position = new Vector3(firstpos+addx, transform.position.y, transform.position.z);
         if (transform.position.x >= (firstpos + (distance - .3)) && (flip == 0))
         {
-            Debug.Log("hey");
+           
             
             var rotationVector = transform.rotation.eulerAngles;
             rotationVector.y += 180;
@@ -48,7 +55,7 @@ public class MonsterMove : MonoBehaviour
        
         if (transform.position.x <= (firstpos + .3) && (flip == 1))
         {
-            Debug.Log("hey");
+            
             
             var rotationVector = transform.rotation.eulerAngles;
             rotationVector.y -= 180;
