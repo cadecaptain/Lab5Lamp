@@ -376,6 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightColor: 0
+  light: {fileID: 4604535040571196548}
 --- !u!114 &2038149370080457587
 MonoBehaviour:
   m_ObjectHideFlags: 0
