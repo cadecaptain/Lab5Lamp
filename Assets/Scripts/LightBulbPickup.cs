@@ -43,6 +43,7 @@ public class LightBulbPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
         if (other.CompareTag("Player"))
         {
             AddLightBulbToInventory();
