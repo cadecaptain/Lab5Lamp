@@ -62,10 +62,12 @@ public class PlayerMovement : MonoBehaviour
     void lightRegular()
     {
         
-         blackLight.SetActive(false);
-         infraredLight.SetActive(false);
-         greenLight.SetActive(false);
-         regularLight.SetActive(true);
+        blackLight.SetActive(false);
+        infraredLight.SetActive(false);
+        greenLight.SetActive(false);
+        regularLight.SetActive(true);
+
+        GameManager.Instance.ChangeLight(LightColor.Regular);
         
     }
 
@@ -77,6 +79,8 @@ public class PlayerMovement : MonoBehaviour
             greenLight.SetActive(false);
             regularLight.SetActive(false);
             blackLight.SetActive(true);
+
+            GameManager.Instance.ChangeLight(LightColor.BlackLight);
         }
 
     }
@@ -89,6 +93,8 @@ public class PlayerMovement : MonoBehaviour
             infraredLight.SetActive(true);
             greenLight.SetActive(false);
             regularLight.SetActive(false);
+
+            GameManager.Instance.ChangeLight(LightColor.Infrared);
         }
     }
 
@@ -100,6 +106,8 @@ public class PlayerMovement : MonoBehaviour
             infraredLight.SetActive(false);
             regularLight.SetActive(false);
             greenLight.SetActive(true);
+
+            GameManager.Instance.ChangeLight(LightColor.Green);
         }
     }
 }

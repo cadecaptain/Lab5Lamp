@@ -63,16 +63,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public bool ChangeLight(LightColor color)
+    public void ChangeLight(LightColor color)
     {
         if (!bulbInventory.Contains(color))
         {
             activeColor = color;
-            return true;
-        }
-        else
-        {
-            return false;
+            
         }
     }
 
@@ -85,7 +81,6 @@ public class GameManager : MonoBehaviour
     public void StartButton()
     {
         HideStartUI();
-        StartCoroutine(ColorLerp(new Color(0, 0, 0, 0), FadeDuration, fade));
         LoadScene("CameronTest");
     }
 
@@ -124,8 +119,9 @@ public class GameManager : MonoBehaviour
         sourcesText.SetActive(true);
     }
 
-    private void LoadScene(String SceneName)
+    public void LoadScene(String SceneName)
     {
+        StartCoroutine(ColorLerp(new Color(0, 0, 0, 0), FadeDuration, fade));
         SceneManager.LoadSceneAsync(SceneName);
     }
 
@@ -133,6 +129,5 @@ public class GameManager : MonoBehaviour
     {
         return bulbInventory.Contains(lightColor);
     }
-
 
 }
