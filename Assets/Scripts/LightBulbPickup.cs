@@ -9,6 +9,7 @@ public class LightBulbPickup : MonoBehaviour
     public LightColor lightColor = LightColor.Regular;
     public Light light;
     AudioSource audio;
+
    
     void Start()
     {
@@ -48,7 +49,11 @@ public class LightBulbPickup : MonoBehaviour
         {
             AddLightBulbToInventory();
             audio.Play();
-            Destroy(gameObject);
+            for (int i = 0; i < 4; i++)
+            {
+                this.gameObject.transform.GetChild(i).GetComponent<MeshRenderer>().enabled = false;
+            }
+            Destroy(gameObject, audio.clip.length);
         }
     }
 
