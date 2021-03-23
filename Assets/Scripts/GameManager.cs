@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
     {
         HideStartUI();
         LoadScene("Ivy");
-    }
+
 
     IEnumerator ColorLerp(Color color, float duration, GameObject fadeImage)
     {
