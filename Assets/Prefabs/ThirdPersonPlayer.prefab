@@ -151,10 +151,10 @@ MonoBehaviour:
   speed: 4
   turnSmoothTime: 0.1
   activeLight: 0
-  regularLight: {fileID: 0}
-  blackLight: {fileID: 0}
-  infraredLight: {fileID: 0}
-  greenLight: {fileID: 0}
+  regularLight: {fileID: 7779710834495012453}
+  blackLight: {fileID: 2072926901016471379}
+  infraredLight: {fileID: 3373675489242564168}
+  greenLight: {fileID: 2889360510662300847}
 --- !u!82 &4348984619804922364
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1043,13 +1043,13 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 1bf3cde66bd244bc4bceb7f364d1c8f3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb956fa24862bd940ba91c8e8bed50be, type: 3}
---- !u!4 &1264533011694675162 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eb956fa24862bd940ba91c8e8bed50be, type: 3}
-  m_PrefabInstance: {fileID: 1587025662360519473}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7146569345330143562 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -780378812118146437, guid: eb956fa24862bd940ba91c8e8bed50be, type: 3}
+  m_PrefabInstance: {fileID: 1587025662360519473}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1264533011694675162 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eb956fa24862bd940ba91c8e8bed50be, type: 3}
   m_PrefabInstance: {fileID: 1587025662360519473}
   m_PrefabAsset: {fileID: 0}
