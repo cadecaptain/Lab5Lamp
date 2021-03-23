@@ -65,11 +65,7 @@ public class GameManager : MonoBehaviour
 
     public void ChangeLight(LightColor color)
     {
-        if (!bulbInventory.Contains(color))
-        {
             activeColor = color;
-            
-        }
     }
 
     public void InstructionsButton()
@@ -81,7 +77,7 @@ public class GameManager : MonoBehaviour
     public void StartButton()
     {
         HideStartUI();
-        LoadScene("CameronTest");
+        LoadScene("Ivy");
     }
 
     IEnumerator ColorLerp(Color color, float duration, GameObject fadeImage)
