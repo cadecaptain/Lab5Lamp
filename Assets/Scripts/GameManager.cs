@@ -33,8 +33,6 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             DontDestroyOnLoad(canvas);
             DontDestroyOnLoad(events);
-
-
         }
         else
         {
@@ -58,6 +56,7 @@ public class GameManager : MonoBehaviour
 
     public void AddLightBulb(LightColor color)
     {
+        Debug.Log("Adding " + color);
         if (!bulbInventory.Contains(color))
         {
             bulbInventory.Add(color);
@@ -87,7 +86,7 @@ public class GameManager : MonoBehaviour
     {
         HideStartUI();
         StartCoroutine(ColorLerp(new Color(0, 0, 0, 0), FadeDuration, fade));
-        LoadScene("SampleScene");
+        LoadScene("CameronTest");
     }
 
     IEnumerator ColorLerp(Color color, float duration, GameObject fadeImage)
@@ -130,6 +129,10 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadSceneAsync(SceneName);
     }
 
+    public bool CheckInventory(LightColor lightColor)
+    {
+        return bulbInventory.Contains(lightColor);
+    }
 
 
 }
