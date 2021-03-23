@@ -17,7 +17,7 @@ public class InfaredObjects : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3) && GameManager.Instance.CheckInventory(LightColor.Infrared))
         {
             transform.GetComponent<MeshRenderer>().enabled = true;
-        } if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Alpha4))
+        } if (Input.GetKeyDown(KeyCode.Alpha1) || (Input.GetKeyDown(KeyCode.Alpha2) && GameManager.Instance.CheckInventory(LightColor.BlackLight))|| (Input.GetKeyDown(KeyCode.Alpha4) && GameManager.Instance.CheckInventory(LightColor.Green)))
         {
             transform.GetComponent<MeshRenderer>().enabled = false;
         }

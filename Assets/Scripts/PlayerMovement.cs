@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
     public Transform graphicsTransform;
-
+    AudioSource audio;
     public float speed = 6f;
 
     public float turnSmoothTime = 0.1f;
@@ -18,6 +18,10 @@ public class PlayerMovement : MonoBehaviour
     public GameObject infraredLight;
     public GameObject greenLight;
 
+    void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -40,21 +44,25 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("User pressed key 1");
             lightRegular();
+            
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             Debug.Log("User pressed key 2");
             lightBlackLight();
+            
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             Debug.Log("User pressed key 3");
             lightInfrared();
+            
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             Debug.Log("User pressed key 4");
             lightGreen();
+            
         }
 
     }
@@ -66,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
         infraredLight.SetActive(false);
         greenLight.SetActive(false);
         regularLight.SetActive(true);
-
+        audio.Play();
         GameManager.Instance.ChangeLight(LightColor.Regular);
         
     }
@@ -79,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
             greenLight.SetActive(false);
             regularLight.SetActive(false);
             blackLight.SetActive(true);
-
+            audio.Play();
             GameManager.Instance.ChangeLight(LightColor.BlackLight);
         }
 
@@ -93,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
             infraredLight.SetActive(true);
             greenLight.SetActive(false);
             regularLight.SetActive(false);
-
+            audio.Play();
             GameManager.Instance.ChangeLight(LightColor.Infrared);
         }
     }
@@ -106,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
             infraredLight.SetActive(false);
             regularLight.SetActive(false);
             greenLight.SetActive(true);
-
+            audio.Play();
             GameManager.Instance.ChangeLight(LightColor.Green);
         }
     }
