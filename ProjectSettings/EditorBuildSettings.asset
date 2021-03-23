@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CameronTest.unity
     guid: 25e34cee9aef5f54492463fc20173d1f
+  - enabled: 1
+    path: Assets/Scenes/BlackLight Level.unity
+    guid: 63a6b336ad3e31e47b6bac93bd24e455
   m_configObjects: {}
