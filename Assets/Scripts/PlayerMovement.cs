@@ -61,33 +61,46 @@ public class PlayerMovement : MonoBehaviour
 
     void lightRegular()
     {
-        blackLight.SetActive(false);
-        infraredLight.SetActive(false);
-        greenLight.SetActive(false);
-        regularLight.SetActive(true);
+        if (GameManager.Instance.CheckInventory(LightColor.Regular))
+        {
+            blackLight.SetActive(false);
+            infraredLight.SetActive(false);
+            greenLight.SetActive(false);
+            regularLight.SetActive(true);
+        }
     }
 
     void lightBlackLight()
     {
-        infraredLight.SetActive(false);
-        greenLight.SetActive(false);
-        regularLight.SetActive(false);
-        blackLight.SetActive(true);
+        if (GameManager.Instance.CheckInventory(LightColor.BlackLight))
+        {
+            infraredLight.SetActive(false);
+            greenLight.SetActive(false);
+            regularLight.SetActive(false);
+            blackLight.SetActive(true);
+        }
+
     }
 
     void lightInfrared()
     {
-        blackLight.SetActive(false);
-        infraredLight.SetActive(true);
-        greenLight.SetActive(false);
-        regularLight.SetActive(false);
+        if (GameManager.Instance.CheckInventory(LightColor.Infrared))
+        {
+            blackLight.SetActive(false);
+            infraredLight.SetActive(true);
+            greenLight.SetActive(false);
+            regularLight.SetActive(false);
+        }
     }
 
     void lightGreen()
     {
-        blackLight.SetActive(false);
-        infraredLight.SetActive(false);
-        regularLight.SetActive(false);
-        greenLight.SetActive(true);
+        if (GameManager.Instance.CheckInventory(LightColor.Green))
+        {
+            blackLight.SetActive(false);
+            infraredLight.SetActive(false);
+            regularLight.SetActive(false);
+            greenLight.SetActive(true);
+        }
     }
 }
