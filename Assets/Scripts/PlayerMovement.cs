@@ -61,13 +61,12 @@ public class PlayerMovement : MonoBehaviour
 
     void lightRegular()
     {
-        if (GameManager.Instance.CheckInventory(LightColor.Regular))
-        {
-            blackLight.SetActive(false);
-            infraredLight.SetActive(false);
-            greenLight.SetActive(false);
-            regularLight.SetActive(true);
-        }
+        
+         blackLight.SetActive(false);
+         infraredLight.SetActive(false);
+         greenLight.SetActive(false);
+         regularLight.SetActive(true);
+        
     }
 
     void lightBlackLight()
