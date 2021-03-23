@@ -63,16 +63,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public bool ChangeLight(LightColor color)
+    public void ChangeLight(LightColor color)
     {
         if (!bulbInventory.Contains(color))
         {
             activeColor = color;
-            return true;
-        }
-        else
-        {
-            return false;
+            
         }
     }
 
