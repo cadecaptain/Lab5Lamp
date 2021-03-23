@@ -29,7 +29,7 @@ public class LightBulbPickup : MonoBehaviour
         }
         else if (lightColor == LightColor.Infrared)
         {
-            Debug.Log("Infrared");
+            //Debug.Log("Infrared");
 
             light.color = new Color(0xFF, 0xB4, 0x8F);
         }

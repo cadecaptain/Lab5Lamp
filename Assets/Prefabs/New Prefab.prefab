@@ -157,9 +157,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8466698465027105032, guid: ff9373cece94f4c82b590711b6baa2a8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ff9373cece94f4c82b590711b6baa2a8, type: 3}
       propertyPath: m_Name
-      value: skeletonzombie_t_avelange@Idle
+      value: New Prefab
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ff9373cece94f4c82b590711b6baa2a8, type: 3}
       propertyPath: m_TagString
