@@ -8,10 +8,11 @@ public class LightBulbPickup : MonoBehaviour
     // Start is called before the first frame update
     public LightColor lightColor = LightColor.Regular;
     public Light light;
+    AudioSource audio;
    
     void Start()
     {
-        
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -45,6 +46,7 @@ public class LightBulbPickup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             AddLightBulbToInventory();
+            audio.Play();
             Destroy(gameObject);
         }
     }
