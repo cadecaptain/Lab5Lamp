@@ -14,10 +14,12 @@ public class LockedDoor : MonoBehaviour
     private bool open = false;
     private int[] code = new int[6] { 0, 0, 0, 1, 1, 2 };
 
+    AudioSource audio;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,6 +30,7 @@ public class LockedDoor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        audio.Play();
         if (!open)
         {
             if (ArrayCompare(GameManager.Instance.GetCode(), code))
