@@ -1387,7 +1387,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Find your bulb
+  m_text: "Navigate the dark with \nunique light bulbs."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d294ef0cfa9b041b6b4e4c54f57d583d, type: 2}
   m_sharedMaterial: {fileID: 1914706136197824228, guid: d294ef0cfa9b041b6b4e4c54f57d583d, type: 2}
@@ -1540,7 +1540,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: There will be some here
+  m_text: 'Sources Include:
+
+    CGTrader
+
+    OpenGameArt'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d294ef0cfa9b041b6b4e4c54f57d583d, type: 2}
   m_sharedMaterial: {fileID: 1914706136197824228, guid: d294ef0cfa9b041b6b4e4c54f57d583d, type: 2}
