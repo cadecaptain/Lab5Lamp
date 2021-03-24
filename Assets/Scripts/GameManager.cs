@@ -27,6 +27,21 @@ public class GameManager : MonoBehaviour
 
     private List<int> code = new List<int>();
 
+    public GameObject hud;
+    public GameObject hudBackground;
+    public GameObject normalLight;
+    public GameObject blackLight;
+    public GameObject infraredLight;
+    public GameObject greenLight;
+
+    private Color hudBackgroundColor;
+    private Color yellowBackground = new Color(165, 165, 0, 80);
+    private Color purpleBackground = new Color(170, 0, 255, 80);
+    private Color redBackground = new Color(255, 0, 0, 80);
+    private Color greenBackground = new Color(0, 180, 0, 80);
+    private List<GameObject> lightList = new List<GameObject>();
+
+
     private void Awake()
     {
         if (Instance == null)
@@ -35,6 +50,14 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             DontDestroyOnLoad(canvas);
             DontDestroyOnLoad(events);
+
+            DontDestroyOnLoad(hud);
+            DontDestroyOnLoad(hudBackground);
+            DontDestroyOnLoad(normalLight);
+            DontDestroyOnLoad(blackLight);
+            DontDestroyOnLoad(infraredLight);
+            DontDestroyOnLoad(greenLight);
+
         }
         else
         {
@@ -48,6 +71,12 @@ public class GameManager : MonoBehaviour
     {
         AddLightBulb(LightColor.Regular);
         ChangeLight(LightColor.Regular);
+
+        hudBackgroundColor = hudBackground.GetComponent<Image>().color;
+        lightList.Add(normalLight);
+        lightList.Add(blackLight);
+        lightList.Add(infraredLight);
+        lightList.Add(greenLight);
 
     }
 
@@ -64,11 +93,26 @@ public class GameManager : MonoBehaviour
         {
             bulbInventory.Add(color);
         }
+
+        if(color == LightColor.Green)
+        {
+            greenLight.SetActive(true);
+
+        } else if (color == LightColor.Infrared)
+        {
+            infraredLight.SetActive(true);
+
+        } else if (color == LightColor.BlackLight)
+        {
+            blackLight.SetActive(true);
+        }
+
     }
 
     public void ChangeLight(LightColor color)
     {
-            activeColor = color;
+        activeColor = color;
+        ChooseLight(color);
     }
 
     public void InstructionsButton()
@@ -81,6 +125,7 @@ public class GameManager : MonoBehaviour
     {
         HideStartUI();
         LoadScene("BlackLight Level");
+        startHUD();
     }
 
 
@@ -141,5 +186,55 @@ public class GameManager : MonoBehaviour
         code.Clear();
         return returnCode;
     }
+
+
+    public void startHUD()
+    {
+        hud.SetActive(true);
+        hudBackground.SetActive(true);
+        Color hudBackgroundColor = hudBackground.GetComponent<Image>().color;
+        hudBackgroundColor = yellowBackground;
+        normalLight.SetActive(true);
+        Debug.Log("starting hud with yellow background");
+
+    }
+
+
+    public void ChooseLight(LightColor color)
+    {
+        GameObject activeLight = normalLight;
+  
+        if (color == LightColor.Regular)
+        {
+            activeLight = normalLight;
+        }
+        else if (color == LightColor.BlackLight)
+        {
+            activeLight = blackLight;
+        }
+        else if (color == LightColor.Infrared)
+        {
+            activeLight = infraredLight;
+        }
+        else if (color == LightColor.Green)
+        {
+            activeLight = greenLight;
+        }
+
+
+        foreach (GameObject bulb in lightList) {
+            if (bulb != activeLight)
+            {
+                bulb.GetComponent<Image>().color = new Color(255, 255, 255, 80);
+                Debug.Log("translucent: " + bulb);
+            } else
+            {
+                bulb.GetComponent<Image>().color = new Color(255, 255, 255, 255);
+                Debug.Log("changing light in UI to: " + bulb);
+            }
+        }
+
+    }
+
 
 }
