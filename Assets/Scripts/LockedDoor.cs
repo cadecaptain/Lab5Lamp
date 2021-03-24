@@ -59,12 +59,16 @@ public class LockedDoor : MonoBehaviour
     {
         for (int i = 0; i < code1.Length; i++)
         {
-            if (code1[i] != code2[i] || code1.Length != code2.Length)
+            if (code1[i] != code2[i])
             {
                 return false;
             }
         }
-        return true;
+        if (code1.Length == 6)
+        {
+            return true;
+        }
+        return false;
     }
 
 }
