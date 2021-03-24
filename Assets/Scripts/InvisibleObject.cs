@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InfaredObjects : MonoBehaviour
+public class InvisibleObject : MonoBehaviour
 {
     public LightColor color;
   
