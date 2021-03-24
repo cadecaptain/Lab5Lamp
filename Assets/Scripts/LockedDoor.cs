@@ -12,6 +12,7 @@ public class LockedDoor : MonoBehaviour
     private float moveSpeed = .005f;
 
     private bool open = false;
+    private int[] code = new int[6] { 0, 0, 0, 1, 1, 2 };
 
     // Start is called before the first frame update
     void Start()
@@ -29,9 +30,12 @@ public class LockedDoor : MonoBehaviour
     {
         if (!open)
         {
-            StartCoroutine(MoveDoor(-1, leftDoor.transform));
-            StartCoroutine(MoveDoor(1, rightDoor.transform));
-            open = true;
+            if (ArrayCompare(GameManager.Instance.GetCode(), code))
+            {
+                StartCoroutine(MoveDoor(-1, leftDoor.transform));
+                StartCoroutine(MoveDoor(1, rightDoor.transform));
+                open = true;
+            }
         }
     }
 
@@ -46,6 +50,18 @@ public class LockedDoor : MonoBehaviour
             yield return null;
         }
 
+    }
+
+    private bool ArrayCompare(int[] code1, int[] code2)
+    {
+        for (int i = 0; i < code1.Length; i++)
+        {
+            if (code1[i] != code2[i] || code1.Length != code2.Length)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
 }

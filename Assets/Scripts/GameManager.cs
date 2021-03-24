@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     public List<LightColor> bulbInventory = new List<LightColor>();
     public LightColor activeColor;
 
+    private List<int> code = new List<int>();
+
     private void Awake()
     {
         if (Instance == null)
@@ -46,6 +48,7 @@ public class GameManager : MonoBehaviour
     {
         AddLightBulb(LightColor.Regular);
         ChangeLight(LightColor.Regular);
+
     }
 
     // Update is called once per frame
@@ -77,7 +80,7 @@ public class GameManager : MonoBehaviour
     public void StartButton()
     {
         HideStartUI();
-        LoadScene("Ivy");
+        LoadScene("BlackLight Level");
     }
 
 
@@ -125,6 +128,18 @@ public class GameManager : MonoBehaviour
     public bool CheckInventory(LightColor lightColor)
     {
         return bulbInventory.Contains(lightColor);
+    }
+
+    public void CreateCode(int digit)
+    {
+        code.Add(digit);
+    }
+
+    public int[] GetCode()
+    {
+        int[] returnCode = code.ToArray();
+        code.Clear();
+        return returnCode;
     }
 
 }
