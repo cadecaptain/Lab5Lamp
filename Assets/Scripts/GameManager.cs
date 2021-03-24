@@ -124,7 +124,7 @@ public class GameManager : MonoBehaviour
     public void StartButton()
     {
         HideStartUI();
-        LoadScene("Infrared Level");
+        LoadScene("Ivy");
         startHUD();
     }
 
@@ -236,5 +236,10 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void WinGame()
+    {
+        Debug.Log("Game won!");
+        throw new NotImplementedException("Not implemented");
+    }
 
 }
