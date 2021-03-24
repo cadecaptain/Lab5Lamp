@@ -14,7 +14,7 @@ public class MonsterMove : MonoBehaviour
     private int flip;
     
     private float addx;
-    AudioSource audio;
+    //AudioSource audio;
 
 
 
@@ -33,7 +33,7 @@ public class MonsterMove : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("hey");
-            audio.Play();
+            //audio.Play();
         }
     }
     //https://www.youtube.com/watch?v=nG68yEB73SQ&t=437s
