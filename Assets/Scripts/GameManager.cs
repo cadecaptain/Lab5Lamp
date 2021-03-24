@@ -124,7 +124,7 @@ public class GameManager : MonoBehaviour
     public void StartButton()
     {
         HideStartUI();
-        LoadScene("BlackLight Level");
+        LoadScene("Infrared Level");
         startHUD();
     }
 

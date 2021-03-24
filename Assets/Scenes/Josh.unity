@@ -2738,6 +2738,12 @@ MonoBehaviour:
   instructionsText: {fileID: 0}
   bulbInventory: 
   activeColor: 0
+  hud: {fileID: 0}
+  hudBackground: {fileID: 0}
+  normalLight: {fileID: 0}
+  blackLight: {fileID: 0}
+  infraredLight: {fileID: 0}
+  greenLight: {fileID: 0}
 --- !u!4 &1028604068
 Transform:
   m_ObjectHideFlags: 0
@@ -3733,7 +3739,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1564039606
 Light:
   m_ObjectHideFlags: 0
