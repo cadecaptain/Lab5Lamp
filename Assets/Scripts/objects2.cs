@@ -17,11 +17,25 @@ public class objects2 : MonoBehaviour
     {
         if (GameManager.Instance.activeColor == color)
         {
-            transform.GetComponent<MeshRenderer>().enabled = true;
+            if (color == LightColor.Green)
+            {
+                transform.GetComponent<SkinnedMeshRenderer>().enabled = true;
+            }
+            else
+            {
+                transform.GetComponent<MeshRenderer>().enabled = true;
+            }
         }
         else
         {
-            transform.GetComponent<MeshRenderer>().enabled = false;
+            if (color == LightColor.Green)
+            {
+                transform.GetComponent<SkinnedMeshRenderer>().enabled = false;
+            }
+            else
+            {
+                transform.GetComponent<MeshRenderer>().enabled = false;
+            }
         }
     }
 }
