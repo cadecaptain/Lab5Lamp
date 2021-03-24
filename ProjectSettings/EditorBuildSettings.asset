@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ivy.unity
     guid: a0d2c6faca714421fb59592875fdd3fc
+  - enabled: 1
+    path: Assets/Scenes/Josh.unity
+    guid: 3e48d7580278a44d59dd556bb0477b30
   m_configObjects: {}
