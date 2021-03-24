@@ -35,10 +35,10 @@ public class GameManager : MonoBehaviour
     public GameObject greenLight;
 
     private Color hudBackgroundColor;
-    private Color yellowBackground = new Color(165, 165, 0, 80);
-    private Color purpleBackground = new Color(170, 0, 255, 80);
-    private Color redBackground = new Color(255, 0, 0, 80);
-    private Color greenBackground = new Color(0, 180, 0, 80);
+    private Color yellowBackground = new Color(165, 165, 0, .25f);
+    private Color purpleBackground = new Color(170, 0, 255, .25f);
+    private Color redBackground = new Color(255, 0, 0, .25f);
+    private Color greenBackground = new Color(0, 180, 0, .25f);
     private List<GameObject> lightList = new List<GameObject>();
 
 
@@ -225,7 +225,7 @@ public class GameManager : MonoBehaviour
         foreach (GameObject bulb in lightList) {
             if (bulb != activeLight)
             {
-                bulb.GetComponent<Image>().color = new Color(255, 255, 255, 80);
+                bulb.GetComponent<Image>().color = new Color(255, 255, 255, .25f);
                 Debug.Log("translucent: " + bulb);
             } else
             {
