@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.28502667, g: 0.37139323, b: 0.49600998, a: 1}
+  m_IndirectSpecularColor: {r: 0.28502658, g: 0.37139314, b: 0.49600917, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -547,6 +547,7 @@ MonoBehaviour:
   blackLight: {fileID: 1389647458}
   infraredLight: {fileID: 1646604995}
   greenLight: {fileID: 1531157903}
+  MainScene: Ivy
 --- !u!4 &277054198
 Transform:
   m_ObjectHideFlags: 0

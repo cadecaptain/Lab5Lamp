@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public GameObject blackLight;
     public GameObject infraredLight;
     public GameObject greenLight;
+    public String MainScene = "Ivy";
 
     private Color hudBackgroundColor;
     private Color yellowBackground = new Color(165, 165, 0, .25f);
@@ -124,7 +125,7 @@ public class GameManager : MonoBehaviour
     public void StartButton()
     {
         HideStartUI();
-        LoadScene("Ivy");
+        LoadScene(MainScene);
         startHUD();
     }
 
