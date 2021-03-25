@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     public GameObject backgroundImage;
     public GameObject sourcesText;
     public GameObject instructionsText;
+    public GameObject replayText;
+    public GameObject replayButton;
+
     public List<LightColor> bulbInventory = new List<LightColor>();
     public LightColor activeColor;
 
@@ -125,8 +128,9 @@ public class GameManager : MonoBehaviour
     public void StartButton()
     {
         HideStartUI();
+        HideWinUI();
         LoadScene(MainScene);
-        startHUD();
+        EnableHud();
     }
 
 
@@ -189,7 +193,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void startHUD()
+    public void EnableHud()
     {
         hud.SetActive(true);
         hudBackground.SetActive(true);
@@ -198,6 +202,13 @@ public class GameManager : MonoBehaviour
         normalLight.SetActive(true);
         Debug.Log("starting hud with yellow background");
 
+    }
+    public void DisableHud()
+    {
+        hud.SetActive(false);
+        activeColor = LightColor.Regular;
+        bulbInventory = new List<LightColor> { LightColor.Regular };
+        ChooseLight(LightColor.Regular);
     }
 
 
@@ -240,7 +251,22 @@ public class GameManager : MonoBehaviour
     public void WinGame()
     {
         Debug.Log("Game won!");
+        DisableHud();
+        HideStartUI();
+        ShowWinUI();
         throw new NotImplementedException("Not implemented");
     }
 
+    private void ShowWinUI()
+    {
+        backgroundImage.SetActive(true);
+        replayText.SetActive(true);
+        replayButton.SetActive(true);
+    }
+    private void HideWinUI()
+    {
+        backgroundImage.SetActive(false);
+        replayText.SetActive(false);
+        replayButton.SetActive(false);
+    }
 }
